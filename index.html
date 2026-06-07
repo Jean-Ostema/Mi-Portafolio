@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Jean Roodny Ostema | Portafolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue-900:#042C53;--blue-800:#0C447C;--blue-700:#185FA5;--blue-500:#378ADD;--blue-300:#85B7EB;--blue-100:#B5D4F4;--blue-50:#E6F1FB;--white:#ffffff;--off:#F7FAFD}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#042C53}
+</style>
+</head>
+<body>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  :root{
+    --blue-900:#042C53;--blue-800:#0C447C;--blue-700:#185FA5;
+    --blue-500:#378ADD;--blue-300:#85B7EB;--blue-100:#B5D4F4;
+    --blue-50:#E6F1FB;--white:#ffffff;--off:#F7FAFD;
+  }
+
+  .pf{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--blue-900);overflow:hidden}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,var(--blue-900) 0%,var(--blue-700) 60%,var(--blue-500) 100%);padding:2.5rem 2rem 3rem;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.05)}
+  .hero::after{content:'';position:absolute;bottom:-80px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04)}
+  .hero-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--blue-300);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.75rem}
+  .hero-name{font-family:'Playfair Display',serif;font-size:clamp(32px,6vw,48px);font-weight:700;color:#fff;line-height:1.08;margin-bottom:0.5rem}
+  .hero-title{font-size:14px;color:var(--blue-100);font-weight:300;margin-bottom:1.25rem;letter-spacing:0.03em}
+  .hero-bio{font-size:13px;line-height:1.85;color:rgba(255,255,255,0.78);margin-bottom:1.5rem;max-width:560px}
+  .badge-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.25rem}
+  .badge{font-family:'DM Mono',monospace;font-size:10px;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.25);color:#fff;backdrop-filter:blur(4px)}
+  .contact-row{display:flex;flex-wrap:wrap;gap:1rem}
+  .contact-link{font-size:12px;color:var(--blue-100);text-decoration:none;display:flex;align-items:center;gap:5px;transition:color 0.2s}
+  .contact-link:hover{color:#fff}
+  .contact-link svg{width:14px;height:14px;flex-shrink:0}
+
+  /* METRICS */
+  .metrics-strip{display:grid;grid-template-columns:repeat(3,1fr);background:var(--blue-800)}
+  .metric{padding:1.1rem 1rem;text-align:center;border-right:0.5px solid rgba(255,255,255,0.1);cursor:default;transition:background 0.2s}
+  .metric:last-child{border-right:none}
+  .metric:hover{background:var(--blue-700)}
+  .metric-val{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fff;line-height:1}
+  .metric-lbl{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-300);margin-top:4px}
+
+  /* NAV TABS */
+  .nav{display:flex;gap:0;background:var(--off);border-bottom:2px solid var(--blue-50);overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:0.75rem 1.1rem;border:none;background:none;color:#9ab;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.2s}
+  .nav-btn:hover{color:var(--blue-700)}
+  .nav-btn.active{color:var(--blue-700);border-bottom-color:var(--blue-700);background:var(--white)}
+
+  /* PANELS */
+  .panels{padding:1.75rem 1.5rem}
+  .panel{display:none;animation:fadeIn 0.3s ease}
+  .panel.active{display:block}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+  /* Section label */
+  .sec-lbl{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-500);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1.5px solid var(--blue-50)}
+
+  /* EXPERIENCE */
+  .exp-item{position:relative;padding:1rem 1rem 1rem 1.25rem;border-left:3px solid var(--blue-500);margin-bottom:1rem;background:var(--off);border-radius:0 8px 8px 0;transition:border-color 0.2s,box-shadow 0.2s}
+  .exp-item:hover{border-color:var(--blue-700);box-shadow:0 2px 12px rgba(24,95,165,0.1)}
+  .exp-role{font-size:14px;font-weight:600;color:var(--blue-900)}
+  .exp-company{font-size:13px;color:var(--blue-700);margin-top:2px}
+  .exp-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-300);margin-top:3px}
+  .exp-bullets{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:5px}
+  .exp-bullets li{font-size:12.5px;color:#445;line-height:1.65;padding-left:14px;position:relative}
+  .exp-bullets li::before{content:"▸";position:absolute;left:0;color:var(--blue-500);font-size:11px;line-height:1.7}
+  .logro{margin-top:10px;padding:10px 14px;background:var(--blue-50);border-radius:8px;border-left:3px solid var(--blue-500)}
+  .logro-lbl{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-700);margin-bottom:4px;display:flex;align-items:center;gap:5px}
+  .logro-text{font-size:12px;color:var(--blue-800);line-height:1.7}
+  .verify-link{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-700);text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-top:6px}
+  .verify-link:hover{text-decoration:underline}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+  .skill-card{background:var(--off);border:1.5px solid var(--blue-100);border-radius:10px;padding:14px 15px;cursor:default;transition:all 0.2s}
+  .skill-card:hover{border-color:var(--blue-500);background:var(--blue-50);transform:translateY(-2px);box-shadow:0 4px 14px rgba(24,95,165,0.12)}
+  .skill-cat{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-500);margin-bottom:7px;text-transform:uppercase;letter-spacing:0.08em}
+  .skill-items{font-size:13px;color:var(--blue-900);line-height:1.75;font-weight:500}
+
+  /* CERTS */
+  .certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+  .cert-item{background:var(--off);border:1px solid var(--blue-100);border-radius:8px;padding:11px 14px;font-size:12.5px;color:var(--blue-800);display:flex;align-items:center;gap:9px;transition:all 0.2s;cursor:default}
+  .cert-item:hover{background:var(--blue-50);border-color:var(--blue-300);transform:translateX(3px)}
+  .cert-item svg{width:15px;height:15px;color:var(--blue-500);flex-shrink:0}
+
+  /* LANGUAGES */
+  .langs-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+  .lang-card{background:var(--off);border:1.5px solid var(--blue-100);border-radius:10px;padding:14px;text-align:center;transition:all 0.2s;cursor:default}
+  .lang-card:hover{border-color:var(--blue-500);background:var(--blue-50)}
+  .lang-flag{font-size:22px;margin-bottom:6px}
+  .lang-name{font-size:13px;font-weight:600;color:var(--blue-900)}
+  .lang-level{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-500);margin-top:4px}
+  .lang-dots{display:flex;justify-content:center;gap:4px;margin-top:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--blue-100)}
+  .dot.filled{background:var(--blue-500)}
+
+  /* SOFT SKILLS */
+  .soft-grid{display:flex;flex-wrap:wrap;gap:8px}
+  .soft-badge{font-size:13px;padding:7px 15px;border-radius:20px;background:var(--blue-50);border:1px solid var(--blue-100);color:var(--blue-800);display:flex;align-items:center;gap:7px;transition:all 0.2s;cursor:default}
+  .soft-badge:hover{background:var(--blue-700);color:#fff;border-color:var(--blue-700)}
+  .soft-badge svg{width:14px;height:14px}
+
+  /* INTERESTS */
+  .interest-row{display:flex;flex-wrap:wrap;gap:8px}
+  .interest{font-family:'DM Mono',monospace;font-size:11px;padding:6px 14px;border-radius:20px;background:var(--blue-900);color:var(--blue-100);border:none;cursor:default;transition:all 0.2s}
+  .interest:hover{background:var(--blue-700);color:#fff}
+
+  /* ABOUT section */
+  .about-card{background:var(--blue-50);border:1.5px solid var(--blue-100);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+  .about-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--blue-900);margin-bottom:0.75rem}
+  .about-text{font-size:13.5px;line-height:1.85;color:var(--blue-800)}
+  .obj-card{background:var(--blue-900);border-radius:12px;padding:1.5rem;color:#fff}
+  .obj-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--blue-300);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem}
+  .obj-text{font-size:13.5px;line-height:1.85;color:rgba(255,255,255,0.85)}
+
+  .mb1{margin-bottom:1rem}
+</style>
+
+<div class="pf">
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-label">Portafolio · Analista de Datos</p>
+    <h1 class="hero-name">Jean Roodny<br>Ostema</h1>
+    <p class="hero-title">Ingeniero en Informática · Business Intelligence · Servicios Digitales</p>
+    <p class="hero-bio">Ingeniero en Informática con más de 3 años de experiencia en gestión de servicios digitales, automatización de procesos y desarrollo de reportes analíticos. Trilingüe orientado al aprendizaje continuo y la transformación digital.</p>
+    <div class="badge-row">
+      <span class="badge">Power BI</span>
+      <span class="badge">Excel Avanzado</span>
+      <span class="badge">SQL</span>
+      <span class="badge">SAP BW</span>
+      <span class="badge">Power Query</span>
+      <span class="badge">Office 365</span>
+    </div>
+    <div class="contact-row">
+      <a class="contact-link" href="mailto:jeanroodnyostema21@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        jeanroodnyostema21@gmail.com
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/jean-roodny-ostema-74a25b1ba/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg>
+        LinkedIn
+      </a>
+      <span class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11z"/><circle cx="12" cy="10" r="2"/></svg>
+        Santiago, Chile
+      </span>
+    </div>
+  </header>
+
+  <!-- METRICS STRIP -->
+  <div class="metrics-strip">
+    <div class="metric">
+      <div class="metric-val">+3</div>
+      <div class="metric-lbl">Años experiencia</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">4</div>
+      <div class="metric-lbl">Idiomas</div>
+    </div>
+    <div class="metric">
+      <div class="metric-val">8</div>
+      <div class="metric-lbl">Certificaciones</div>
+    </div>
+  </div>
+
+  <!-- NAV TABS -->
+  <nav class="nav" role="tablist">
+    <button class="nav-btn active" onclick="switchTab('sobre')" role="tab">Sobre mí</button>
+    <button class="nav-btn" onclick="switchTab('experiencia')" role="tab">Experiencia</button>
+    <button class="nav-btn" onclick="switchTab('habilidades')" role="tab">Habilidades</button>
+    <button class="nav-btn" onclick="switchTab('educacion')" role="tab">Educación</button>
+    <button class="nav-btn" onclick="switchTab('idiomas')" role="tab">Idiomas</button>
+  </nav>
+
+  <div class="panels">
+
+    <!-- SOBRE MÍ -->
+    <div class="panel active" id="panel-sobre">
+      <div class="about-card mb1">
+        <h2 class="about-title">Perfil profesional</h2>
+        <p class="about-text">Ingeniero en Informática con más de 3 años de experiencia en gestión de servicios digitales, automatización de procesos y desarrollo de reportes analíticos. Aplico herramientas de Business Intelligence para convertir datos en decisiones estratégicas. Me caracterizo por mi capacidad analítica, orientación a la mejora continua y motivación por profundizar conocimientos en analítica de datos.</p>
+      </div>
+      <div class="obj-card">
+        <div class="obj-label">Objetivo de formación</div>
+        <p class="obj-text">Fortalecer mis competencias en analítica de datos y toma de decisiones estratégicas, incorporando metodologías avanzadas que me permitan generar valor en organizaciones mediante el análisis crítico de la información.</p>
+      </div>
+      <div style="margin-top:1rem">
+        <p class="sec-lbl">Áreas de interés</p>
+        <div class="interest-row">
+          <span class="interest">Analítica de datos</span>
+          <span class="interest">Toma de decisiones estratégicas</span>
+          <span class="interest">Business Intelligence</span>
+          <span class="interest">IA aplicada</span>
+          <span class="interest">Transformación digital</span>
+        </div>
+      </div>
+      <div style="margin-top:1.25rem">
+        <p class="sec-lbl">Competencias personales</p>
+        <div class="soft-grid">
+          <span class="soft-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><path d="M12 17h.01"/></svg>Pensamiento analítico</span>
+          <span class="soft-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Resolución de problemas</span>
+          <span class="soft-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>Adaptabilidad</span>
+          <span class="soft-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Trabajo en equipo</span>
+          <span class="soft-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Comunicación efectiva</span>
+          <span class="soft-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Aprendizaje continuo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCIA -->
+    <div class="panel" id="panel-experiencia">
+      <p class="sec-lbl">Experiencia profesional</p>
+      <div class="exp-item">
+        <p class="exp-role">Operador de Servicios Digitales</p>
+        <p class="exp-company">Duoc UC</p>
+        <p class="exp-date">Nov 2022 — Presente · +3 años</p>
+        <ul class="exp-bullets">
+          <li>Administración de plataformas digitales y gestión de accesos en entornos educativos</li>
+          <li>Análisis y procesamiento de datos institucionales para la mejora de procesos</li>
+          <li>Desarrollo y optimización de reportes en Power BI para apoyo en la toma de decisiones</li>
+          <li>Automatización de tareas operativas mediante herramientas digitales</li>
+          <li>Capacitación a usuarios en herramientas tecnológicas y analíticas</li>
+        </ul>
+        <div class="logro">
+          <div class="logro-lbl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            Logros destacados
+          </div>
+          <p class="logro-text">Optimización de reportes analíticos que facilitaron la interpretación de datos para usuarios internos · Participación activa en iniciativas de mejora continua mediante análisis de información operativa</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="panel" id="panel-habilidades">
+      <p class="sec-lbl">Herramientas técnicas</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-cat">Business Intelligence</div>
+          <div class="skill-items">Power BI · SAP BW</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">Análisis de datos</div>
+          <div class="skill-items">Excel Avanzado · Power Query</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">Bases de datos</div>
+          <div class="skill-items">SQL</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-cat">Productividad</div>
+          <div class="skill-items">Office 365 · Automatización</div>
+        </div>
+      </div>
+      <div style="margin-top:1.25rem">
+        <p class="sec-lbl">Certificaciones</p>
+        <div class="certs-grid">
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Inteligencia de Negocios (BI)</div>
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>Modelos de Datos</div>
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Gestión de Proyectos</div>
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Análisis de Requerimientos</div>
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Arquitectura de Software</div>
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Calidad de Software</div>
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Programación de Software</div>
+          <div class="cert-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Inglés Intermedio</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCACIÓN -->
+    <div class="panel" id="panel-educacion">
+      <p class="sec-lbl">Formación académica</p>
+      <div class="exp-item">
+        <p class="exp-role">Ingeniería en Informática</p>
+        <p class="exp-company">Duoc UC · Santiago, Chile</p>
+        <p class="exp-date">2019 — 2024</p>
+        <a class="verify-link" href="https://drive.google.com/drive/folders/1RmxjDyU7AzHKKRxkhIhnJZENmC1B6btE?usp=sharing" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="11" height="11"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ver certificados en Google Drive
+        </a>
+      </div>
+    </div>
+
+    <!-- IDIOMAS -->
+    <div class="panel" id="panel-idiomas">
+      <p class="sec-lbl">Idiomas</p>
+      <div class="langs-row">
+        <div class="lang-card">
+          <div class="lang-flag">🇭🇹</div>
+          <div class="lang-name">Criollo Haitiano</div>
+          <div class="lang-level">Nativo</div>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-flag">🇨🇱</div>
+          <div class="lang-name">Español</div>
+          <div class="lang-level">Fluido</div>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-flag">🇫🇷</div>
+          <div class="lang-name">Francés</div>
+          <div class="lang-level">Fluido</div>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div>
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-flag">🇬🇧</div>
+          <div class="lang-name">Inglés</div>
+          <div class="lang-level">Intermedio</div>
+          <div class="lang-dots">
+            <div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /panels -->
+</div>
+
+<script>
+function switchTab(id){
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById('panel-'+id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
